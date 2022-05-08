@@ -42,8 +42,7 @@ module.exports = async ({github, owner, repo, workflow, run_id}) => {
         }
 
 
-        try {
-            console.log(`Found workflow_id: ${workflow_id}`)
+        try {            
             const response = await github.request(
                 "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
                 {owner, repo, workflow_id}
