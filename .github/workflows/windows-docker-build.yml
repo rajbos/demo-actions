@@ -9,9 +9,9 @@ jobs:
   build-windows-docker-image:
     runs-on: windows-latest
     steps:
-
       - uses: actions/checkout@v2
 
-      - run: |
+      - name: Run docker build
+        run: |
           cd src
           docker build -t windows-server-20222 -f Windows.Dockerfile .
