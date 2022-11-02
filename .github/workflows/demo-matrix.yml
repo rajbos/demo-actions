@@ -1,4 +1,17 @@
 name: demo the matrix
 
+on:
+  push:
+    paths: 
+      - .github/workflows/demo-matrix.yml
+      
 jobs:
   job-1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    steps:
+     - run: |
+         echo "Hello world"
+         echo "${{ matrix.node-version }}"
