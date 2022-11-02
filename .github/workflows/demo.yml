@@ -47,3 +47,10 @@ jobs:
           node-version: 12.x
 
       - run: node --version
+
+  # This is the third job
+  parallel: 
+    name: Third job
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo Hello init
