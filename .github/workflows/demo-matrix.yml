@@ -11,6 +11,8 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
+        temp: [1,2,3]
+        temp3: [1,2,3]
     steps:
      - run: |
          echo "Hello world"
