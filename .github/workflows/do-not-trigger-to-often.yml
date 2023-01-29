@@ -15,6 +15,7 @@ jobs:
 
       - env:
           workflow_context: ${{ toJSON(github) }}
+        id: workflow_info
         run: |
           echo "Running from ${{ github.workflow }}"
           # workflow_ref = "rajbos/demo-actions/.github/workflows/do-not-trigger-to-often.yml@refs/heads/main"
@@ -25,9 +26,10 @@ jobs:
           
           IFS='@'
           read -ra splitted <<< $workflow_id
-          workflow_id=${splitted[1]}
+          workflow_id=${splitted[0]}
           echo "splitted: [$workflow_id]"
-          echo "Context: $workflow_context"
+          #echo "Context: $workflow_context"
+          echo "workflow_id=$workflow_id" >> $GITHUB_OUTPUT
           
       - uses: actions/github-script@v6
         with:
@@ -35,7 +37,8 @@ jobs:
           script: |
             const owner = "rajbos"
             const repo = "demo-actions"
-            const workflow = "${{ github.workflow }}"
+            #const workflow = "${{ github.workflow }}"
+            const workflow = "${{ steps.workflow_info.outputs.workflow_id }}
 
             const script = require('./src/often.js')
             const test = script({github, context, owner, repo, workflow})
