@@ -1,12 +1,12 @@
 module.exports = async ({github, context, owner, repo, workflow}) => {
     
     console.log(`beginning on workflow [${workflow}]`)
-    const workflowParts = workflow.split('/')
+    const workflowParts = workflow.split(`/`)
     console.log(`Found this: [${workflowParts[4]}]`)
     const workflow_id = workflowParts[4].split('@')[0]
     
     console.log(`Running on repo [${owner}/${repo}] with workflow_id: [${workflow_id}]`)
-          
+return          
     try {
         console.log(`Start of the try call`)
 
