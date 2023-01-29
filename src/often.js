@@ -2,7 +2,7 @@ module.exports = async ({github, context, owner, repo, workflow}) => {
     
     console.log(`beginning on workflow [${workflow}]`);
     const workflowParts = workflow.split('/')
-    const workflow_id = workflowParts[4]
+    const workflow_id = workflowParts[4].split('@')[1]
     
     console.log(`Running on repo [${owner}/${repo}] with workflow_id: [${workflow_id}]`)
           
