@@ -39,7 +39,8 @@ jobs:
             const repo = "demo-actions"
             
             // const workflow = "${{ github.workflow }}"
-            const workflow = "${{ steps.workflow_info.outputs.workflow_id }}"
+            // const workflow = "${{ steps.workflow_info.outputs.workflow_id }}"
+            const workflow = "${{ github.workflow_ref }}"
 
             const script = require('./src/often.js')
             const test = script({github, context, owner, repo, workflow})
