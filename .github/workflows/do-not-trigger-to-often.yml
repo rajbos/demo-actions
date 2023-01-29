@@ -19,7 +19,7 @@ jobs:
           echo "Running from ${{ github.workflow }}"
           echo "Context: ${{ workflow_context"
           
-      - uses: actions/github-script@v5.0.0
+      - uses: actions/github-script@v6
         with:
           # The script to run
           script: |
