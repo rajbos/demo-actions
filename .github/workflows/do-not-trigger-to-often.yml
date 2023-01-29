@@ -20,7 +20,7 @@ jobs:
           # workflow_ref = "rajbos/demo-actions/.github/workflows/do-not-trigger-to-often.yml@refs/heads/main"
           IFS='/'
           read -ra splitted <<< "${{ github.workflow_ref }}"
-          workflow_id=$splitted[4]
+          workflow_id=${splitted[4]}
           echo "splitted: [$workflow_id]"
           echo "Context: $workflow_context"
           
