@@ -34,10 +34,10 @@ jobs:
       - uses: actions/github-script@v6
         with:
           # The script to run
+          # const workflow = "${{ github.workflow }}"
           script: |
             const owner = "rajbos"
             const repo = "demo-actions"
-            \\const workflow = "${{ github.workflow }}"
             const workflow = "${{ steps.workflow_info.outputs.workflow_id }}
 
             const script = require('./src/often.js')
