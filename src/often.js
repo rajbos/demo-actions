@@ -53,5 +53,5 @@ module.exports = async ({github, context, owner, repo, workflow}) => {
     }
 
     console.log(`The End`)
-
+    return
   }
