@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - with:
+      - env:
           workflow_context: toJSON(github))
         run: |
           echo "Running from ${{ github.workflow }}"
