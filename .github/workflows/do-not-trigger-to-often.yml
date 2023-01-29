@@ -37,7 +37,7 @@ jobs:
           script: |
             const owner = "rajbos"
             const repo = "demo-actions"
-            //const workflow = "${{ github.workflow }}"
+            \\const workflow = "${{ github.workflow }}"
             const workflow = "${{ steps.workflow_info.outputs.workflow_id }}
 
             const script = require('./src/often.js')
