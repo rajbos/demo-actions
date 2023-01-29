@@ -21,9 +21,10 @@ jobs:
           IFS='/'
           read -ra splitted <<< "${{ github.workflow_ref }}"
           workflow_id=${splitted[4]}
+          echo "first split: [$workflow_id]"
           
           IFS='@'
-          read -ra splitted <<< workflow_id
+          read -ra splitted <<< $workflow_id
           workflow_id=${splitted[1]}
           echo "splitted: [$workflow_id]"
           echo "Context: $workflow_context"
