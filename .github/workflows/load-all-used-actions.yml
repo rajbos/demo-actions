@@ -19,7 +19,7 @@ jobs:
         run: echo '${{ steps.load-actions.outputs.actions }}' > 'actions.json'
             
       - name: Upload result file as artefact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with: 
           name: actions
           path: actions.json
