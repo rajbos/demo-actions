@@ -17,7 +17,7 @@ jobs:
           workflow_context: toJSON(github)
         run: |
           echo "Running from ${{ github.workflow }}"
-          echo "Context: ${{ workflow_context"
+          echo "Context: ${{ workflow_context }}"
           
       - uses: actions/github-script@v6
         with:
