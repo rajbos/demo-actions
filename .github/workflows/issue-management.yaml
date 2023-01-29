@@ -26,7 +26,7 @@ jobs:
           application_id: ${{ secrets.GH_APPLICATION_ID }}
           application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
           
-      - uses: monry/actions-add-issue-to-project@3e54e1f966203c08d6f15406f7dcf6f6ef2f7dd1
+      - uses: monry/actions-add-issue-to-project@774e1a9754da6cc70b5b2648cec7d53dea93211d
         id: add-issue-to-project
         with:
           # Personal Access Token that with `repo`, `org:read` and `org:write` are granted.
