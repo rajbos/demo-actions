@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+  
+  push:
+    paths: 
+      - .github/workflows/demo-day1.yaml
+      
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rajbos/ActionsFundamentals-1/hello-world-docker-action@main
+      
