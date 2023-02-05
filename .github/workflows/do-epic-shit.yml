@@ -10,6 +10,6 @@ jobs:
   do-epic-shit:
     runs-on: ubuntu-latest
     steps:
-    - uses: XpiritBV/doepicshit@main # v1.0
+    - uses: XpiritBV/doepicshit@02bb543fb5b10c6468397fa9585b2fc30dbfa300 # v1.0.1
       with:
         who-to-greet: "future Xpiriter"
