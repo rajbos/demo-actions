@@ -1,0 +1,15 @@
+name: Do epic shit
+on: 
+  workflow_dispatch:
+  
+  push:
+    paths:
+    - .github/workflows/do-epic-shit.yml
+    
+jobs:
+  do-epic-shit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: XpiritBV/doepicshit@d8b16fa42427eb3c31e9fe258e287ab4c68e3d7e # v1.0
+      with:
+        who-to-greet: "future Xpiriter"
