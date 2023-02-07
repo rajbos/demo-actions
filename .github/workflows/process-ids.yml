@@ -3,6 +3,9 @@ on:
   push:
     paths:
     - .github/workflows/process-ids.yml
+    
+  workflow_dispatch:
+  
 jobs:
   test-job:
     runs-on: ubuntu-latest
