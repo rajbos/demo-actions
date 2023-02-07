@@ -10,8 +10,9 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-    - run: echo $PID
-    - run: echo $PID
-    - run: echo $PID
-    - run: echo $PID
-    - run: echo $PID
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
