@@ -1,0 +1,16 @@
+name: Process Ids
+on: 
+  push:
+    paths:
+    - .github/workflows/test.yml
+  
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
