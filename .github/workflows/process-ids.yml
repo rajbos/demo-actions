@@ -1,0 +1,14 @@
+name: Process Ids
+on: 
+  push:
+    paths:
+    - .github/workflows/process-ids.yml
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo $PID
+    - run: echo $PID
+    - run: echo $PID
+    - run: echo $PID
+    - run: echo $PID
