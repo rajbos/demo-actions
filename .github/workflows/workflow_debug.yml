@@ -11,4 +11,4 @@ jobs:
     steps:
     - run: |
         echo "ACTIONS_STEP_DEBUG: [${{ env.ACTIONS_STEP_DEBUG }}]"
-        echo "ACTIONS_RUNNER_DEBUG: [$ env.ACTIONS_RUNNER_DEBUG }}]"
+        echo "ACTIONS_RUNNER_DEBUG: [${{ env.ACTIONS_RUNNER_DEBUG }}]"
