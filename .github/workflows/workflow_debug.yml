@@ -12,3 +12,7 @@ jobs:
     - run: |
         echo "ACTIONS_STEP_DEBUG: [${{ env.ACTIONS_STEP_DEBUG }}]"
         echo "ACTIONS_RUNNER_DEBUG: [${{ env.ACTIONS_RUNNER_DEBUG }}]"
+        echo "TEP_DEBUG: [${{ env.STEP_DEBUG }}]"
+        echo "RUNNER_DEBUG: [${{ env.RUNNER_DEBUG }}]"
+        
+        echo "RUNNER_DEBUG: [${{ runner.debug }}]"
