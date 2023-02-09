@@ -1,0 +1,14 @@
+name:
+  workflow_debug
+on:
+  push:
+    paths:
+    - .github/workflows/workflow_debug.yml
+    
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "ACTIONS_STEP_DEBUG: [$ACTIONS_STEP_DEBUG]"
+        echo "ACTIONS_RUNNER_DEBUG: [$ACTIONS_RUNNER_DEBUG]"
