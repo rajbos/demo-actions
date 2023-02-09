@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "ACTIONS_STEP_DEBUG: [$ACTIONS_STEP_DEBUG]"
-        echo "ACTIONS_RUNNER_DEBUG: [$ACTIONS_RUNNER_DEBUG]"
+        echo "ACTIONS_STEP_DEBUG: [${{ env.ACTIONS_STEP_DEBUG }}]"
+        echo "ACTIONS_RUNNER_DEBUG: [$ env.ACTIONS_RUNNER_DEBUG }}]"
