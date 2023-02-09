@@ -28,3 +28,9 @@ jobs:
         context: ${{ toJSON(job) }}
       run: |
         echo "$context"
+    
+    - name: Log env context
+      env:
+        context: ${{ toJSON(env) }}
+      run: |
+        echo "$context"
