@@ -16,7 +16,15 @@ jobs:
         echo "RUNNER_DEBUG: [${{ env.RUNNER_DEBUG }}]"
         
         echo "RUNNER_DEBUG: [${{ runner.debug }}]"
-    - env:
+        
+    - name: Log github context
+      env:
         context: ${{ toJSON(github) }}
+      run: |
+        echo "$context"
+        
+    - name: Log job context
+      env:
+        context: ${{ toJSON(job) }}
       run: |
         echo "$context"
