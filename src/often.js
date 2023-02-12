@@ -1,6 +1,6 @@
 module.exports = async ({github, owner, repo, workflow, run_id}) => {
     
-    console.log(`beginning of workflow [${workflow}] with run_id [${run_id}]`);
+    console.log(`Beginning of workflow [${workflow}] with run_id [${run_id}]`);
     //"workflow_ref": "rajbos/demo-actions/.github/workflows/do-not-trigger-to-often.yml@refs/heads/often-test",
     let workflowParts = workflow.split('@')
     let workflow_id = workflowParts[0] // first parth before @
@@ -10,7 +10,7 @@ module.exports = async ({github, owner, repo, workflow, run_id}) => {
     console.log(`Running on repo [${owner}/${repo}] with workflow_id: [${workflow_id}]`)
           
     try {
-        console.log(`Start of the try call`)
+        console.log(`Testing 'getWorkflow' call`)
 
         try {
             const runs = await github.rest.actions.getWorkflow({
@@ -26,6 +26,7 @@ module.exports = async ({github, owner, repo, workflow, run_id}) => {
             console.log(`error calling 'getWorkflow' with owner/repo[${owner}/${repo}] and workflow [${workflow_id}]: ${error}`)
         }
         
+        console.log(`Testing 'listWorkflowRunsForRepo' call`)
         try {
             const runs2 = await github.rest.actions.listWorkflowRunsForRepo({
                     owner,
@@ -39,7 +40,8 @@ module.exports = async ({github, owner, repo, workflow, run_id}) => {
             console.log(`err calling 'listWorkflowRunsForRepo': ${err}`)
         }
 
-        let workflow_id
+        console.log(`Testing direct 'actions/runs{run_id}' call`)
+        workflow_id = '' // reset the value
         try {
             const currentRun = await github.request(
                 "GET /repos/{owner}/{repo}/actions/runs/{run_id}",
