@@ -4,7 +4,7 @@ module.exports = async ({github, owner, repo, workflow, run_id}) => {
     //"workflow_ref": "rajbos/demo-actions/.github/workflows/do-not-trigger-to-often.yml@refs/heads/often-test",
     let workflowParts = workflow.split('@')
     let workflow_id = workflowParts[0] // first parth before @
-    workflowParts = workflow.split('/')
+    workflowParts = workflow_id.split('/')
     workflow_id = workflowParts[workflowParts.length-1] // last part after last / will contain the yml name
     
     console.log(`Running on repo [${owner}/${repo}] with workflow_id: [${workflow_id}]`)
