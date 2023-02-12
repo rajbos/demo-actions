@@ -1,4 +1,4 @@
-name: Trigger NotOften
+#name: Trigger NotOften
 on:
   push:
     branches:
