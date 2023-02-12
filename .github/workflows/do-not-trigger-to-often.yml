@@ -21,7 +21,6 @@ jobs:
           echo "github_context: $github_context"
       - run: |
           echo "github.workflow_ref: ${{ github.workflow_ref }}"
-         #"workflow_ref": "rajbos/demo-actions/.github/workflows/do-not-trigger-to-often.yml@refs/heads/often-test",
           
       - uses: actions/github-script@v5.0.0
         with:
@@ -29,8 +28,11 @@ jobs:
           script: |
             const owner = "rajbos"
             const repo = "demo-actions"
-            const workflow = "${{ github.workflow }}"
+            
             const run_id = "${{ github.run_id }}"
+
+            let workflow = "${{ github.workflow }}" // is the name of the workflow, and not the filename or actual id
+            workflow = "${{ github.workflow_ref }}" // is the full ref for the workflow, which is a known path
 
             const script = require('./src/often.js')
             const test = await script({github, owner, repo, workflow, run_id})
