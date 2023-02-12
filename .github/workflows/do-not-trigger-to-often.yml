@@ -13,9 +13,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: |
+      - uses: actions/checkout@v3
+      - env:
+          github_context: ${{ toJson(github) }}
+        run: |
           echo "Running from ${{ github.workflow }} with ${{ github.run_id }}"
+          echo "github_context: $github_context"
           
       - uses: actions/github-script@v5.0.0
         with:
