@@ -4,11 +4,14 @@ on:
   push:
     paths: 
       - .github/workflows/self-hosted2.yml
+permissions:
+  contents: read
+
 jobs:
   self-hosted-number2:
     runs-on: self-hosted
     steps:
-       - uses: actions/checkout@v2
+       - uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
        - run: echo "Hello world"
        
        - name: Checkout Git repo manually

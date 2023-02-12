@@ -1,6 +1,9 @@
 on:
   workflow_dispatch:
   
+permissions:
+  contents: read
+
 jobs:
   demo:
     runs-on: ubuntu-latest

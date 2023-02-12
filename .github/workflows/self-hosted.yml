@@ -4,11 +4,14 @@ on:
   push:
     paths: 
       - .github/workflows/self-hosted.yml
+permissions:
+  contents: read
+
 jobs:
   self-hosted-number1:
     runs-on: self-hosted
     steps:
-       - uses: actions/checkout@v2
+       - uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
        - run: echo "Hello world"
        
        - name: Checkout Git repo manually
@@ -17,13 +20,13 @@ jobs:
            cd npm-cli
            git clone https://github.com/npm/cli.git
            
-       - uses: actions/setup-dotnet@v3
+       - uses: actions/setup-dotnet@607fce577a46308457984d59e4954e075820f10a # v3.0.3
          with:
            dotnet-version: '5.x'
        - run: dotnet --version
        
 
-       - uses: actions/setup-node@v3
+       - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
          with:
            node-version: '14'
        - run: npm version

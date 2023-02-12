@@ -3,12 +3,17 @@ on:
   push:
     paths:
       - .github/workflows/docker-scan.yml
+permissions:
+  contents: read
+
 jobs:
   docker-scan:
+    permissions:
+      security-events: write  # for github/codeql-action/upload-sarif to upload SARIF results
     runs-on: ubuntu-latest
     steps: # docker://ghcr.io/calibreapp/image-actions/image-actions:main
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@8bd2f9fbda2109502356ff8a6a89da55b1ead252 # master
         with:
           image-ref: "ghcr.io/calibreapp/image-actions/image-actions:main"
           exit-code: "1"
@@ -20,6 +25,6 @@ jobs:
           output: "trivy-results.sarif"
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@231aa2c8a89117b126725a0e11897209b7118144 # v1.1.39
         with:
           sarif_file: "trivy-results.sarif"

@@ -5,6 +5,9 @@ on:
     paths:
     - .github/workflows/workflow_debug.yml
     
+permissions:
+  contents: read
+
 jobs:
   demo:
     runs-on: ubuntu-latest
