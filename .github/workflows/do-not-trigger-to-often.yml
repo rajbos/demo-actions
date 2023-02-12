@@ -1,4 +1,4 @@
-#name: Trigger NotOften
+name: Trigger NotOften
 on:
   push:
     branches:
@@ -32,7 +32,7 @@ jobs:
             const run_id = "${{ github.run_id }}"
 
             let workflow = "${{ github.workflow }}" // is the name of the workflow, and not the filename or actual id
-            //workflow = "${{ github.workflow_ref }}" // is the full ref for the workflow, which is a known path
+            workflow = "${{ github.workflow_ref }}" // is the full ref for the workflow, which is a known path
 
             const script = require('./src/often.js')
             const test = await script({github, owner, repo, workflow, run_id})
