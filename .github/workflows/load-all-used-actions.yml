@@ -7,6 +7,11 @@ jobs:
   load-all-used-actions:
     runs-on: ubuntu-latest
     steps: 
+    
+      - uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
       - uses: devops-actions/github-action-load-used-actions@typescript
         name: Load used actions        
         id: load-actions
