@@ -6,6 +6,9 @@ on:
       - .github/workflows/demo-matrix.yml
   workflow_dispatch:
       
+permissions:
+  contents: read
+
 jobs:
   job-1:
     runs-on: ubuntu-latest

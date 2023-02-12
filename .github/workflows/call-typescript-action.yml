@@ -5,6 +5,6 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - uses: rob-demo/demo-typescript-action@main
+      - uses: rob-demo/demo-typescript-action@87e6852fea623b115153be85b538c4f202cb1ade # main
         with:
           milliseconds: 100

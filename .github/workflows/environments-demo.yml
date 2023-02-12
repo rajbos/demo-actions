@@ -1,6 +1,9 @@
 on:
   workflow_dispatch:
   
+permissions:
+  contents: read
+
 jobs:
   deploy-to-devtest:
     runs-on: ubuntu-latest

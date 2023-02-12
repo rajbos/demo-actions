@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
 
       - env:
           workflow_context: ${{ toJSON(github) }}
@@ -31,7 +31,7 @@ jobs:
           #echo "Context: $workflow_context"
           echo "workflow_id=$workflow_id" >> $GITHUB_OUTPUT
           
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0 # v6.3.3
         with:
           # The script to run
           script: |

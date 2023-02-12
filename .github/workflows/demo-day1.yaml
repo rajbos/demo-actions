@@ -5,6 +5,9 @@ on:
     paths: 
       - .github/workflows/demo-day1.yaml
       
+permissions:
+  contents: read
+
 jobs:
   job-1:
     runs-on: ubuntu-latest

@@ -7,13 +7,13 @@ jobs:
   create-new-issue:
     runs-on: ubuntu-latest
     steps:
-    - uses: rajbos-actions/workflow-application-token-action@main
+    - uses: rajbos-actions/workflow-application-token-action@6a9741bf210c9a93370560585c908161170ecada # main
       id: get_workflow_token
       with:
         application_id: ${{ secrets.GH_APPLICATION_ID }}
         application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
 
-    - uses: actions/github-script@v6
+    - uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0 # v6.3.3
       name: Create new issue
       id: get-action
       with:
