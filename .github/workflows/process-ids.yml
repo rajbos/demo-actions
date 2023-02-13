@@ -14,19 +14,37 @@ jobs:
     - run: echo $$
     - run: echo $$
     - name: Write to output
+      id: define
       run: |
         echo $$
         echo "$GITHUB_OUTPUT"
         echo "MyVariable=MyValue" > $GITHUB_OUTPUT
+        
     - name: Read variable bash
       run: |
         echo $$
         echo "MyVariable: $MyVariable"
+        echo ""
+        echo "$GITHUB_OUTPUT"
+        cat $GITHUB_OUTPUT
+        
+    - name: Read variable bash from step.output
+      run: |
+        echo $$
+        echo "MyVariable: ${{ steps.define.outputs.MyVariable }}"
+        
+    - name: Read variable bash from env.MyVariable
+      env:
+        MyVariable: ${{ steps.define.outputs.MyVariable }}
+      run: |
+        echo $$
+        echo "MyVariable: $MyVariable"
+        
     - name: Read variable pwsh
       shell: pwsh
       run: |
         echo $$
-        echo "MyVariable: $MyVariable"
+        echo "MyVariable: ${{ steps.define.outputs.MyVariable }}"
   
   windows:
     runs-on: windows-latest
