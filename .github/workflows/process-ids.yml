@@ -16,6 +16,7 @@ jobs:
     - name: Write to output
       run: |
         echo $$
+        echo "$GITHUB_OUTPUT"
         echo "MyVariable=MyValue" > $GITHUB_OUTPUT
     - name: Read variable bash
       run: |
