@@ -26,3 +26,13 @@ jobs:
     - run: $PID
     - run: $PID
     - run: $PID
+
+  macos:
+    runs-on: macos-latest
+    steps:
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
+    - run: echo $$
