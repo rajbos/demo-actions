@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  test-job:
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
     - run: echo $$
@@ -16,3 +16,13 @@ jobs:
     - run: echo $$
     - run: echo $$
     - run: echo $$
+  
+  windows:
+    runs-on: windows-latest
+    steps:
+    - run: $PID
+    - run: $PID
+    - run: $PID
+    - run: $PID
+    - run: $PID
+    - run: $PID
