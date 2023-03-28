@@ -1,0 +1,26 @@
+on:
+ push:
+   paths:
+   - .github/workflows/working-with-artifacts.yml
+   
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Hello GitHub Actions" >> example-file.txt
+    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: example-file.txt
+        
+  job-2:
+    runs-on: ubuntu-latest
+    needs: job-1
+    steps:    
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        path: example-file.txt
+        
+    - run: cat example-file.txt
