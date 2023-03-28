@@ -21,6 +21,8 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: example-file.txt
+        path: artifact
         
-    - run: cat example-file.txt
+    - run: |
+       ls -la
+       cat artifact\example-file.txt
