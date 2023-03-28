@@ -25,4 +25,4 @@ jobs:
         
     - run: |
        ls -la
-       cat artifact\example-file.txt
+       cat artifact/example-file.txt
