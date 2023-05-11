@@ -16,6 +16,7 @@ jobs:
           FIRST_ISSUE: |
             👋 @{{ author }}
              Thanks for opening your first issue here! Be sure to follow the issue template!
+             ![](https://media4.giphy.com/media/PPgZCwZPKrLcw75EG1/giphy.gif)
 
           FIRST_PR: |
             👋 @{{ author }}
