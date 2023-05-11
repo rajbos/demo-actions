@@ -16,7 +16,7 @@ jobs:
           FIRST_ISSUE: |
             👋 @{{ author }}
              Thanks for opening your first issue here! Be sure to follow the issue template!
-             ![](https://media4.giphy.com/media/PPgZCwZPKrLcw75EG1/giphy.gif)
+             ![Happy cat gif](https://media4.giphy.com/media/PPgZCwZPKrLcw75EG1/giphy.gif)
 
           FIRST_PR: |
             👋 @{{ author }}
@@ -25,6 +25,7 @@ jobs:
           FIRST_PR_MERGED: |
             🎉 @{{ author }}
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
+            ![Happy cat gif](https://media0.giphy.com/media/Rznz8HjrKQAOQ/giphy.gif?cid=ecf05e47btwvh04zgekymhwtcfsoryekdeiws81xw992p8i6&ep=v1_gifs_related&rid=giphy.gif&ct=g)
             
           FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
 
