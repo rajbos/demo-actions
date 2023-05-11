@@ -25,9 +25,9 @@ jobs:
             🎉 @{{ author }}
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
             
-          FIRST_PR_REACTIONS: rocket
+          FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
 
           STAR_MESSAGE: If you like this project, please ⭐star⭐ our repo.
           
-          FIRST_ISSUE_REACTIONS: hooray
+          FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
           
