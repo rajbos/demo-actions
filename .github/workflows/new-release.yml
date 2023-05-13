@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "clone the repo"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          #git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
+          git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
           gh repo clone rajbos/demo-actions
 
           echo "create a commit"
@@ -39,7 +39,7 @@ jobs:
           gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
           # Approve the PR
           gh pr review --approve --comment "LGTM"
-          gh pr merge --auto --squash --merge --delete-branch      
+          gh pr merge --auto --squash --merge #--delete-branch      
 
        # get tag for this release
       - name: Get tag value
