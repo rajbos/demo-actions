@@ -34,11 +34,11 @@ jobs:
             git config --local user.name "GitHub Actions"
             date >> test/auto-example.txt
             git add .
-            git commit -m "release: ${{ github.ref }}"  
+            git commit -m "commit for feature $i"  
             git push --set-upstream origin new-branch-$i
           
             echo "create a PR"
-            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}"               
+            gh pr create --title "Adding new feature $i" --body "release: ${{ github.ref }}"               
           done
 
       - name: Approve the PRs with different user
