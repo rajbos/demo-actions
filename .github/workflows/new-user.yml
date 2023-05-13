@@ -12,8 +12,8 @@ jobs:
       pull-requests: write
     steps:
       - uses: wow-actions/welcome@v1
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: |
             👋 @{{ author }}
              Thanks for opening your first issue here! Be sure to follow the issue template!
@@ -32,8 +32,7 @@ jobs:
 
           STAR_MESSAGE: If you like this project, please ⭐star⭐ our repo.
           
-          FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
-          
+          FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'          
 
   second-job:
     runs-on: ubuntu-latest
