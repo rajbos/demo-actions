@@ -38,7 +38,7 @@ jobs:
             git push --set-upstream origin new-branch-$i
           
             echo "create a PR"
-            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch-$1"
+            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}"
             # Approve the PR
             gh pr review --approve --comment "LGTM" --body "release: ${{ github.ref }}"
             gh pr merge --auto --squash --merge --delete-branch      
