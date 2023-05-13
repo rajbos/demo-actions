@@ -23,6 +23,8 @@ jobs:
         
   giphy:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: mkramb/giphy-action@master
         with:
