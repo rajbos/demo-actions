@@ -1,0 +1,26 @@
+name: Order a pizza
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pizza:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+    - name: pizza
+      uses: mattdsteele/dominos-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        address: ${{ secrets.ADDRESS }}
+        order-type: ${{ secrets.ORDER_TYPE }}
+        email: ${{ secrets.EMAIL }}
+        phone: ${{ secrets.PHONE }}
+        first-name: ${{ secrets.FIRST_NAME }}
+        last-name: ${{ secrets.LAST_NAME }}
+        card-number: ${{ secrets.CARD_NUMBER }}
+        expiration: ${{ secrets.EXPIRATION }}
+        security-code: ${{ secrets.SECURITY_CODE }}
+        card-postal-code: ${{ secrets.CARD_POSTAL_CODE }}
+        active: false
