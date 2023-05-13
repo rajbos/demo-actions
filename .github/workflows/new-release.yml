@@ -27,15 +27,17 @@ jobs:
           # loop the code 5 times
           for i in {1..5}
           do
-            echo "create a commit %i"
+            echo "create a commit $i"
             cd demo-actions
             git checkout -b "new-branch-$i"
             #git checkout "new-branch"
             git pull
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
-            git commit --allow-empty -m "release: ${{ github.ref }}"          
-            git push origin "new-branch-$i" --set-upstream "new-branch-$i"
+            git commit --allow-empty -m "release: ${{ github.ref }}"  
+            git branch --set-upstream-to=origin/new-branch-$i new-branch-$i
+            #git push origin "new-branch-$i" --set-upstream "new-branch-$i"
+            git push
           
             echo "create a PR"
             gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
