@@ -63,13 +63,13 @@ jobs:
             gh pr merge --auto --squash --merge --delete-branch      
           done
 
-    publish:
-      runs-on: ubuntu-latest
-      needs: setup
-      permissions:
-        contents: write
-        pull-requests: write
-      steps:
+  publish:
+    runs-on: ubuntu-latest
+    needs: setup
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
        # get tag for this release
       - name: Get tag value
         id: tag
