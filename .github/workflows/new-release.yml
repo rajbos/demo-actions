@@ -22,15 +22,16 @@ jobs:
         run: |
           echo "clone the repo"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
-          #gh repo clone rajbos/demo-actions
+          #git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
+          gh repo clone rajbos/demo-actions
 
           echo "create a commit"
           cd demo-actions
+          git checkout -b "new-branch"
+          git pull
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
-          git commit --allow-empty -m "release: ${{ github.ref }}"
-          git checkout -b "new-branch"
+          git commit --allow-empty -m "release: ${{ github.ref }}"          
           git push -u origin "new-branch"
           
           echo "create a PR"
