@@ -21,13 +21,16 @@ jobs:
               owner: context.repo.owner,
               title: `Standup for ${date}`,
               body: `Please fill out the following table for ${date}:
-              |Name|Priorities 🧐|Progress 😄|Problems 😒|
+              |Who|Name|Priorities 🧐|Progress 😄|Problems 😒|
               |---|---|---|---|
-              |![rajbos]| | | |
-              | | | | |
-              | | | | |
+              |![rajbos]      |Rob Bos        | | | |
+              |![vriesmarcel] |Marcel de Vries| | | |
+              |![wulfland]    |Michael Kaufman| | | |
+              | | | | | |
 
               [rajbos]: https://avatars.githubusercontent.com/rajbos?s=80
+              [vriesmarcel]: https://avatars.githubusercontent.com/vriesmarcel?s=80
+              [wulfland]: https://avatars.githubusercontent.com/wulfland?s=80
               `,
               labels: ['standup'],
             });
