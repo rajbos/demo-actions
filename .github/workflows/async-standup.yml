@@ -34,3 +34,11 @@ jobs:
               `,
               labels: ['standup'],
             });
+
+            // create comment on this issue to trigger another workflow
+            await github.rest.issues.createComment({
+              repo: context.repo.repo,
+              owner: context.repo.owner,
+              issue_number: issue.data.number,
+              body: '/giphy scrum standup',
+            });
