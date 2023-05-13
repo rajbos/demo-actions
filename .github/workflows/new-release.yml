@@ -82,7 +82,7 @@ jobs:
         with:
           name: Release ${{ steps.tag.outputs.tag }}
           tag_name: ${{ github.ref }}
-          body: Release ${{ steps.tag.outputs.tag }} is available now
+          #body: Release ${{ steps.tag.outputs.tag }} is available now
           files: ./dist/main.js
           token: ${{ secrets.PAT }}
 
