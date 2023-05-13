@@ -26,7 +26,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git commit --allow-empty -m "release: ${{ github.ref }}"
           git checkout -b "new-branch"
-          git push origin new-branch
+          git push origin new-branch --set-upstream "new-branch"
           
           # create a PR
           gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
