@@ -38,7 +38,7 @@ jobs:
             git push --set-upstream origin new-branch-$i
           
             echo "create a PR"
-            gh pr create --title "Adding new feature $i" --body "release: ${{ github.ref }}"               
+            gh pr create --title "Adding new feature $i" --body "release: ${{ github.ref }}" --label "enhancement"
           done
 
       - name: Approve the PRs with different user
