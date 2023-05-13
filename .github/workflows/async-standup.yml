@@ -1,6 +1,8 @@
 name: Async standup
 on:
   workflow_dispatch:
+  push:
+    paths: .github/workflows/async-standup.yml
 
 jobs:
   create-standup:
@@ -9,9 +11,9 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            # get the current date in ISO format
+            // get the current date in ISO format
             const date = new Date().toISOString().split('T')[0];
-            # create new issue in repo
+            // create new issue in repo
             const issue = await github.issues.create({
               repo: context.repo.repo,
               owner: context.repo.owner,
