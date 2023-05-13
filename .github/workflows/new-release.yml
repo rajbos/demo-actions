@@ -61,7 +61,7 @@ jobs:
 
             # Approve the PR
             gh pr review --approve
-            gh pr merge --auto --squash --delete-branch      
+            gh pr merge --squash --delete-branch      
           done
 
   publish:
