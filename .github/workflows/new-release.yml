@@ -26,6 +26,7 @@ jobs:
           #gh repo clone rajbos/demo-actions
 
           echo "create a commit"
+          cd demo-actions
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
           git commit --allow-empty -m "release: ${{ github.ref }}"
