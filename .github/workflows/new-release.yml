@@ -1,0 +1,53 @@
+name: New release
+
+on:   
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+# Declare default GITHUB_TOKEN permissions as read only.
+permissions: read-all
+ 
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      release: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: |
+          # create a commit
+          git config --local user.email "actions"
+          git config --local user.name "GitHub Actions"
+          git commit --allow-empty -m "release: ${{ github.ref }}"
+          git checkout -b "new-branch"
+          git push origin new-branch
+          # create a PR
+          gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
+          # Approve the PR
+          gh pr review --approve --comment "LGTM"
+          gh pr merge --auto --squash --merge --delete-branch      
+
+       # get tag for this release
+      - name: Get tag value
+        id: tag
+        uses: devops-actions/action-get-tag@4e13c4ea459efa2988a10d5ff0f252bb097929ef # v1.0.1
+
+      # publish a release with the build assets
+      - uses: rajbos-actions/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
+        id: publish
+        with:
+          name: Release ${{ steps.tag.outputs.tag }}
+          tag_name: ${{ github.ref }}
+          body: Release ${{ steps.tag.outputs.tag }} is available now
+          files: ./dist/main.js
+          token: ${{ secrets.PAT }}
+
+      # - uses: rajbos-actions/slack@ed1309ab9862e57e9e583e51c7889486b9a00b0f # v2.0.0
+      #   with: 
+      #     status: ${{ job.status }}
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #   if: always()
