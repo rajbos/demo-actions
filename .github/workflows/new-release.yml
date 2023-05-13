@@ -22,7 +22,8 @@ jobs:
         run: |
           # clone the repo
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          gh repo clone rajbos/demo-actions
+          git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
+          #gh repo clone rajbos/demo-actions
 
           # create a commit
           git config --local user.email "actions"
