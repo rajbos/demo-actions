@@ -23,7 +23,7 @@ jobs:
           echo "clone the repo"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
-          gh repo clone rajbos/demo-actions
+          #gh repo clone rajbos/demo-actions
 
           echo "create a commit"
           cd demo-actions
