@@ -9,7 +9,7 @@ on:
 permissions: read-all
  
 jobs:
-  publish:
+  setup:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,12 +38,38 @@ jobs:
             git push --set-upstream origin new-branch-$i
           
             echo "create a PR"
-            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}"
+            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}"               
+          done
+
+      - name: Approve the PRs with different user
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          echo "clone the repo"
+          cd ..
+          echo $PWD
+          mkdir temp
+          cd temp
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
+          
+          # loop the code 5 times
+          for i in {1..5}
+          do        
+            git checkout "new-branch-$i"
+
             # Approve the PR
             gh pr review --approve
             gh pr merge --auto --squash --merge --delete-branch      
           done
 
+    publish:
+      runs-on: ubuntu-latest
+      needs: setup
+      permissions:
+        contents: write
+        pull-requests: write
+      steps:
        # get tag for this release
       - name: Get tag value
         id: tag
