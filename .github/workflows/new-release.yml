@@ -20,19 +20,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # clone the repo
+          echo "clone the repo"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
           #gh repo clone rajbos/demo-actions
 
-          # create a commit
+          echo "create a commit"
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
           git commit --allow-empty -m "release: ${{ github.ref }}"
           git checkout -b "new-branch"
           git push -u origin "new-branch"
           
-          # create a PR
+          echo "create a PR"
           gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
           # Approve the PR
           gh pr review --approve --comment "LGTM"
