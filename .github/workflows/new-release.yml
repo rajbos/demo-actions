@@ -21,8 +21,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # clone the repo
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           gh repo clone rajbos/demo-actions
-          
+
           # create a commit
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
