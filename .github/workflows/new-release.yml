@@ -32,7 +32,9 @@ jobs:
             git checkout -b "new-branch-$i"
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
-            git commit --allow-empty -m "release: ${{ github.ref }}"  
+            date >> test/auto-example.txt
+            git add .
+            git commit -m "release: ${{ github.ref }}"  
             git push --set-upstream origin new-branch-$i
           
             echo "create a PR"
