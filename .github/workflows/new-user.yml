@@ -12,6 +12,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: wow-actions/welcome@v1
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           FIRST_ISSUE: |
             👋 @{{ author }}
@@ -33,3 +34,22 @@ jobs:
           
           FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
           
+
+  second-job:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - name: add comment from PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Thanks for your PR! Tagging @rajbos for visibliity.'
+          })
