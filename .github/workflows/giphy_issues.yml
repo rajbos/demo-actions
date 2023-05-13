@@ -9,7 +9,7 @@ jobs:
     name: GIPHY Generator
     runs-on: ubuntu-latest
     permissions:
-    issues: write
+      issues: write
     steps:
     - name: GIPHY Generator
       id: giphy_generator

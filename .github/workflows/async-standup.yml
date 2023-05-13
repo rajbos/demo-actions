@@ -22,7 +22,7 @@ jobs:
               title: `Standup for ${date}`,
               body: `Please fill out the following table for ${date}:
               |Who|Name|Priorities 🧐|Progress 😄|Problems 😒|
-              |---|---|---|---|
+              |---|---|---|---|---|
               |![rajbos]      |Rob Bos        | | | |
               |![vriesmarcel] |Marcel de Vries| | | |
               |![wulfland]    |Michael Kaufman| | | |
