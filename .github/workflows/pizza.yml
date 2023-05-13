@@ -10,7 +10,7 @@ jobs:
       issues: write
     steps:
     - name: pizza
-      uses: mattdsteele/dominos-action@master
+      uses: rajbos-actions/dominos-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         address: ${{ secrets.ADDRESS }}
