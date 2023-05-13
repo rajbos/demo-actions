@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.PAT }}
           script: |
             // get the current date in ISO format
             const date = new Date().toISOString().split('T')[0];
