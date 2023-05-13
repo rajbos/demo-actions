@@ -15,14 +15,14 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # fetch all history so that we can determine the tag name for the release
 
       - name: Create some commits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # clone the repo
+          gh repo clone rajbos/demo-actions
+          
           # create a commit
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
