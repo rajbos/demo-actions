@@ -35,9 +35,10 @@ jobs:
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
             git commit --allow-empty -m "release: ${{ github.ref }}"  
-            git branch --set-upstream-to=origin/new-branch-$i new-branch-$i
+            #git branch --set-upstream-to=origin/new-branch-$i new-branch-$i
+            git push --set-upstream origin new-branch-$i
             #git push origin "new-branch-$i" --set-upstream "new-branch-$i"
-            git push -u
+            #git push -u
           
             echo "create a PR"
             gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
