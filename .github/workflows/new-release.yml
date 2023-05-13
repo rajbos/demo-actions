@@ -30,18 +30,13 @@ jobs:
             echo "create a commit $i"
             cd demo-actions
             git checkout -b "new-branch-$i"
-            #git checkout "new-branch"
-            #git pull
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
             git commit --allow-empty -m "release: ${{ github.ref }}"  
-            #git branch --set-upstream-to=origin/new-branch-$i new-branch-$i
             git push --set-upstream origin new-branch-$i
-            #git push origin "new-branch-$i" --set-upstream "new-branch-$i"
-            #git push -u
           
             echo "create a PR"
-            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
+            gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch-$1"
             # Approve the PR
             gh pr review --approve --comment "LGTM" --body "release: ${{ github.ref }}"
             gh pr merge --auto --squash --merge --delete-branch      
