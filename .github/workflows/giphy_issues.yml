@@ -20,3 +20,11 @@ jobs:
       with:
         rating: 'g'
         lang: 'en'
+        
+  giphy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mkramb/giphy-action@master
+        with:
+          giphy-secret: ${{ secrets.GIPHY_TOKEN }}
+          github-secret: ${{ secrets.GITHUB_TOKEN }}
