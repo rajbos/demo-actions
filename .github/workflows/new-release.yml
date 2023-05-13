@@ -40,7 +40,7 @@ jobs:
             echo "create a PR"
             gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}"
             # Approve the PR
-            gh pr review --approve --comment "LGTM" --body "release: ${{ github.ref }}"
+            gh pr review --approve
             gh pr merge --auto --squash --merge --delete-branch      
           done
 
