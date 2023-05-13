@@ -17,13 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: |
+      - name: Create some commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
           # create a commit
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
           git commit --allow-empty -m "release: ${{ github.ref }}"
           git checkout -b "new-branch"
           git push origin new-branch
+          
           # create a PR
           gh pr create --title "Adding new feature" --body "release: ${{ github.ref }}" --base "main" --head "new-branch"
           # Approve the PR
