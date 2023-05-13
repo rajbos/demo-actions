@@ -31,7 +31,7 @@ jobs:
             cd demo-actions
             git checkout -b "new-branch-$i"
             #git checkout "new-branch"
-            git pull
+            #git pull
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
             git commit --allow-empty -m "release: ${{ github.ref }}"  
