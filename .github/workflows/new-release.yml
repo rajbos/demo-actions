@@ -23,12 +23,12 @@ jobs:
           echo "clone the repo"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
-
+          cd demo-actions
+          
           # loop the code 5 times
           for i in {1..5}
           do
-            echo "create a commit $i"
-            cd demo-actions
+            echo "create a commit $i"            
             git checkout -b "new-branch-$i"
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
