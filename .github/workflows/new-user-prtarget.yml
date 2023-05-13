@@ -38,7 +38,7 @@ jobs:
               repo: context.repo.repo,
               body: `**Welcome**, new contributor!
 
-                Please make sure you've read our [contributing guide](CONTRIBUTING.md) and we look forward to reviewing your Pull request shortly ✨
-                
-                ![Salt bea](https://i.giphy.com/media/l0ExfefoWu6iRWI6s/giphy.webp)`
+              Please make sure you've read our [contributing guide](CONTRIBUTING.md) and we look forward to reviewing your Pull request shortly ✨
+
+              ![Salt bea](https://i.giphy.com/media/l0ExfefoWu6iRWI6s/giphy.webp)`
             })
