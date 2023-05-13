@@ -1,3 +1,4 @@
+name : run Trivy scan
 on:
   workflow_dispatch:
   push:

@@ -1,3 +1,4 @@
+name: Working with artifacts
 on:
  push:
    paths:

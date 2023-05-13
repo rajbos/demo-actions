@@ -1,5 +1,4 @@
-name:
-  workflow_debug
+name: Workflow debugging
 on:
   push:
     paths:

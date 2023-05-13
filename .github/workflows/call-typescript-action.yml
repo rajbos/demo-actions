@@ -1,3 +1,4 @@
+name: Testing my first action
 on:
   workflow_dispatch:
   
