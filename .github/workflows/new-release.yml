@@ -28,12 +28,11 @@ jobs:
           # loop the code 5 times
           for i in {1..5}
           do
-            git checkout main
             echo "create a commit $i"            
             git checkout -b "new-branch-$i"
             git config --local user.email "actions"
             git config --local user.name "GitHub Actions"
-            date >> test/auto-example.txt
+            date >> test/auto-example-$i.txt
             git add .
             git commit -m "commit for feature $i"  
             git push --set-upstream origin new-branch-$i
