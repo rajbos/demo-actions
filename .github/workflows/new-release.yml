@@ -28,6 +28,7 @@ jobs:
           # loop the code 5 times
           for i in {1..5}
           do
+            git checkout main
             echo "create a commit $i"            
             git checkout -b "new-branch-$i"
             git config --local user.email "actions"
