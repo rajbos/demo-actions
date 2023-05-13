@@ -1,0 +1,29 @@
+name: Async standup
+on:
+  workflow_dispatch:
+
+jobs:
+  create-standup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            # get the current date in ISO format
+            const date = new Date().toISOString().split('T')[0];
+            # create new issue in repo
+            const issue = await github.issues.create({
+              repo: context.repo.repo,
+              owner: context.repo.owner,
+              title: `Standup for ${date}`,
+              body: `Please fill out the following table for ${date}:
+              |Name|Priorities 🧐|Progress 😄|Problems 😒|
+              |---|---|---|---|
+              |![rajbos]| | | |
+              | | | | |
+              | | | | |
+
+              [rajbos]: https://avatars.githubusercontent.com/rajbos?s=80
+              `,
+              labels: ['standup'],
+            });
