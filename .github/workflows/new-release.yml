@@ -27,7 +27,8 @@ jobs:
 
           echo "create a commit"
           cd demo-actions
-          git checkout -b "new-branch"
+          #git checkout -b "new-branch"
+          git checkout "new-branch"
           git pull
           git config --local user.email "actions"
           git config --local user.name "GitHub Actions"
