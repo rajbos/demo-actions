@@ -16,10 +16,10 @@ module.exports = async ({github, context, owner, repo, workflow}) => {
             repo,
             workflow_id
         });
-        console.log(``)
+
         let runObj = JSON.stringify(runs)
-        console.log(`Runs: ${runObj}`)
-        console.log(``)
+        console.log(`\nRuns: ${runObj}\n`)
+
         
         const runs2 = await github.rest.actions.listWorkflowRunsForRepo({
                 owner,
