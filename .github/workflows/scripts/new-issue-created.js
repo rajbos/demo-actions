@@ -2,7 +2,7 @@ module.exports = ({github, context, title}) => {
     console.log(`issue title ${title}`)
     if (title.includes('💩')) {
         // add a comment and close the issue
-        github.issues.createComment({
+        github.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
@@ -10,7 +10,7 @@ module.exports = ({github, context, title}) => {
         })
         console.log(`commented on issue`)
 
-        github.issues.update({
+        github.rest.issues.update({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
