@@ -39,7 +39,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@7f947733020ee03daa363d16ea1223717b132f11
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
-          organization: ${{ env.project-owner }}
+          user: ${{ env.project-owner }}
           project_id: ${{ env.project-number }}
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.todo }} # Target status
@@ -59,7 +59,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@7f947733020ee03daa363d16ea1223717b132f11
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
-          organization: ${{ env.project-owner }}
+          user: ${{ env.project-owner }}
           project_id: ${{ env.project-number }}
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.assigned }} # Target status
@@ -79,7 +79,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@7f947733020ee03daa363d16ea1223717b132f11
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
-          organization: ${{ env.project-owner }}
+          user: ${{ env.project-owner }}
           project_id: ${{ env.project-number }}
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.done }} # Target status
