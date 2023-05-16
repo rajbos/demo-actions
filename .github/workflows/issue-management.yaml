@@ -10,8 +10,8 @@ env:
   assigned: Assigned
   done: Done
 
-  project-owner: 'rob-demo'
-  project-number: 1
+  project-owner: 'rajbos'
+  project-number: 5
 
 jobs:
   issue-created:
