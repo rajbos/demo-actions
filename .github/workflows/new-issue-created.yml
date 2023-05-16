@@ -24,6 +24,9 @@ jobs:
    
    
    
+   
+   
+   
   slack-notify:
     runs-on: ubuntu-latest
     needs: tag-a-user
@@ -34,3 +37,36 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: always()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  check-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps: 
+      - env:
+          data:  ${{ toJSON(github.event.issue) }}
+        run: |
+          echo $data
+      - uses: actions/github-script@v6
+        name: Close the issue if the name contains 💩
+        with:
+           script: |
+              console.log(github.event.issue.title)
+            
+        
