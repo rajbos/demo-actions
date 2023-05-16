@@ -44,6 +44,7 @@ jobs:
             }
 
             console.log(``)
+            const grouped = JSON.parse(`${{ steps.load-runner-info-org.outputs.grouped }}`)
 
             // example of a test you can do on the amount of runners online with this label
             const selfHosted = grouped.find(group => group.name === 'self-hosted')
