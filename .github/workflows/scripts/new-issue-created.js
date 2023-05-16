@@ -16,10 +16,10 @@ module.exports = ({github, context, title}) => {
             repo: context.repo.repo,
             state: 'closed'
         })
-        console.log(`closed on issue`)
+        console.log(`closed the issue`)
     }
     else {
-    console.log(`issue does not contain 💩`)
+        console.log(`issue does not contain 💩`)
     }
-
+    return true
 }
