@@ -37,9 +37,9 @@ jobs:
               return
             }
             
-            console.log(`Found [${info.runners.length}] runner(s)`)
-            for (let num = 0; num < info.runners.length; num++) {
-              const runner = info.runners[num]
+            console.log(`Found [${info.length}] runner(s)`)
+            for (let num = 0; num < info.length; num++) {
+              const runner = info[num]
               console.log(`- name: [${runner.name}]`)
             }
 
