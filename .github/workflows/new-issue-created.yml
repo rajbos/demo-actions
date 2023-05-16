@@ -18,3 +18,18 @@ jobs:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+   
+   
+   
+   
+   
+   
+  slack-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack notify message
+        uses: brainly/action-slack-notificator@c87e1c8965e3ccb71854d68f8047f7baf0128014
+        with:
+          webhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
+          messageContent: 'Hi Rob, there is a new issue in ${{ github.repository }}'
