@@ -52,7 +52,7 @@ jobs:
               core.info(`Found the expected amount of runners with label "self-hosted"`)
               // write the info the the summary
               core.summary
-                .addRaw(`:green-cirle: Found the expected amount of runners with label "self-hosted"`)
+                .addRaw(`:green_cirle: Found the expected amount of runners with label "self-hosted"`)
                 .write()
               return
             }
@@ -60,7 +60,7 @@ jobs:
               core.error(`Found an unexpected amount of runners with label "self-hosted": ${selfHosted.status}`)
               // write the info the the summary
               core.summary
-                .addRaw(`:red-cirle: Found an unexpected amount of runners with label "self-hosted": ${selfHosted.status}`)
+                .addRaw(`:red_cirle: Found an unexpected amount of runners with label "self-hosted": ${selfHosted.status}`)
                 .write()
               return
             }
@@ -70,7 +70,7 @@ jobs:
               core.error(`There are [${selfHosted.counter - selfHosted.status}] runners offline`)
               // write the info the the summary
               core.summary
-                .addRaw(`:red-cirle: There are [${selfHosted.counter - selfHosted.status}] runners offline`)
+                .addRaw(`:red_cirle: There are [${selfHosted.counter - selfHosted.status}] runners offline`)
                 .write()
               return
             }
