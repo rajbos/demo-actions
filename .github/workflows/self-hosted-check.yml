@@ -1,4 +1,4 @@
-name: self-hosted
+name: self-hosted check runners
 on:
   workflow_dispatch:
   push:
