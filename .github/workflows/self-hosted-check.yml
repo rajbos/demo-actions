@@ -50,6 +50,10 @@ jobs:
             const selfHosted = grouped.find(group => group.name === 'self-hosted')
             if (selfHosted.status == 1) {
               core.info(`Found the expected amount of runners with label "self-hosted"`)
+              // write the info the the summary
+              core.summary
+                .addRaw(`Found the expected amount of runners with label "self-hosted"`)
+                .write()
               return
             }
             else {
