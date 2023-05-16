@@ -67,6 +67,22 @@ jobs:
         name: Close the issue if the name contains 💩
         with:
            script: |
-              console.log(github.event.issue.title)
+              const title = context.issue.title
+              console.log('issue title': title)
+              if (title.includes('💩')) {
+                // add a comment and close the issue
+                github.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: 'Greetings, this issue has been closed because it contains 💩'
+                })
+                github.issues.update({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'closed'
+                })
+              }
             
         
