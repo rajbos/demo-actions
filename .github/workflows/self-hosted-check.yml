@@ -18,6 +18,13 @@ jobs:
          organization: ${{ env.organization }}
          
      - uses: actions/github-script@v5
+       name: debugging
+       with: 
+          script: |
+            const info = JSON.parse(`${{ steps.load-runner-info-org.outputs.runners }}`)   
+            console.log(info)
+
+     - uses: actions/github-script@v5
        name: Test runner info
        with: 
           script: |
