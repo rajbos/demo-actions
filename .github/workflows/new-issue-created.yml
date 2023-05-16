@@ -63,32 +63,13 @@ jobs:
           data:  ${{ toJSON(github.event.issue) }}
         run: |
           echo $data
+      - uses: actions/checkout@v3
       - uses: actions/github-script@v6
         name: Close the issue if the name contains 💩
         with:
            script: |
-              const title = '${{ github.event.issue.title }}'
-              console.log(`issue title ${title}`)
-              if (title.includes('💩') {
-                // add a comment and close the issue
-                github.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: 'Greetings, this issue has been closed because it contains 💩'
-                })
-                console.log(`commented on issue`)
-
-                github.issues.update({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  state: 'closed'
-                })
-                console.log(`closed on issue`)
-              }
-              else {
-                console.log(`issue does not contain 💩`)
-              }
+            const script = require('./github/workflows/scripts/new-issue-created.js')
+            const title = '${{ github.event.issue.title }}'
+            console.log(script({github, context, title}))
             
         
