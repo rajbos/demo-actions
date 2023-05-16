@@ -7,6 +7,8 @@ on:
 jobs:
   tag-a-user:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps: 
       - uses: devops-actions/issue-comment-tag@v0.1.4
         name: Tag a user or team in an issue comment
