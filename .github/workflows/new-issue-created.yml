@@ -67,8 +67,8 @@ jobs:
       - uses: actions/github-script@v6
         name: Close the issue if the name contains 💩
         with:
-           script: |
-            const script = require('./github/workflows/scripts/new-issue-created.js')
+           script: |              
+            const script = require('.github/workflows/scripts/new-issue-created.js')
             const title = '${{ github.event.issue.title }}'
             console.log(script({github, context, title}))
             
