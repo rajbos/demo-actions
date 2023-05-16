@@ -23,6 +23,9 @@ jobs:
           script: |
             const info = JSON.parse(`${{ steps.load-runner-info-org.outputs.runners }}`)   
             console.log(info)
+            
+            console.log('----------------')
+            console.log(info.length)
 
      - uses: actions/github-script@v5
        name: Test runner info
