@@ -1,4 +1,4 @@
-
+name: Composite vs Reusable
 on:
   push:
     paths:
