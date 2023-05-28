@@ -27,3 +27,14 @@ jobs:
          with:
            node-version: '14'
        - run: npm version
+
+  docker-test:
+    runs-on: self-hosted
+    steps:
+       - uses: actions/checkout@v2
+       - run: echo "Hello world"
+       
+       - name: Checkout Git repo manually
+         run: |
+           cd C:\ProgramData\Docker\
+           ls -la
