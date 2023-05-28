@@ -13,12 +13,26 @@ $diagFile = $diagFiles | Select-Object -First 1
 
 # overwrite with other filename for testing
 #$diagFile = Get-Item -Path 'C:\temp\gh-runner\_diag\Worker_20230528-194114-utc.log'
+$diagFile = Get-Item -Path 'C:\temp\gh-runner\_diag\Runner_20230519-212527-utc.log'
 
 # echo the filename we are using 
 Write-Host "Using diag file: $($diagFile.FullName)"
 $diagContent = Get-Content -Path $diagFile.FullName
 # find the first line of the json object with all the information, denoted by '{'
 $firstLine = $diagContent | Select-String -Pattern '{' | Select-Object -First 1
+
+#Write-Host $firstLine
+if (!$firstLine) {
+    Write-Host "No runner information found in diag file: $($diagFile.FullName)"
+    exit
+}
+
+# if the first line contains 'WRITE ERROR: {' then exit
+if ($firstLine -match 'WRITE ERROR: {') {
+    Write-Host "No runner information found in diag file: $($diagFile.FullName)"
+    exit
+}
+
 $previousLine = $diagContent | Select-Object -Skip ($firstLine.LineNumber-2) | Select-Object -First 1
 # find the year in the prevous line, denoted by '[<year>-<month>'
 $year = $previousLine -replace '.*\[(\d{4})-\d{2}.*', '$1'
