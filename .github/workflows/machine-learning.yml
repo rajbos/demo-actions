@@ -41,3 +41,17 @@ jobs:
            echo -e "\n### Precision and Recall Curve" >> report.md
            cml-publish ./results/precision_recall_curve.png --md >> report.md
            cml-send-comment report.md
+
+    cache-container:
+      runs-on: ubuntu-latest
+      steps:
+         - run: |
+             cd /var/lib/docker/overlay2
+             ls -la
+         # cache the dvcorg/cml-py3:latest container for faster downloading instead of pulling it every time
+         - name: Cache Primes
+           id: cache-primes
+           uses: actions/cache@v3
+           with:
+             path: /var/lib/docker/overlay2
+             key: cml-py3
