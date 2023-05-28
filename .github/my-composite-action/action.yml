@@ -5,7 +5,9 @@ name: my-composite-action
 runs:
   using: composite
   steps:
-    - run: echo "Hello from composite"
+    - shell: bash
+      run: echo "Hello from composite"
+      
     - uses: actions/checkout@v3
     
     - uses: XpiritBV/doepicshit@02bb543fb5b10c6468397fa9585b2fc30dbfa300 # v1.0.1
