@@ -23,8 +23,11 @@ jobs:
            # Install requirements
            pip install -r requirements.txt
 
-           # Pull data & run-cache from IBM COS and reproduce pipeline
-           dvc pull --run-cache
+           dvc get https://github.com/iterative/dataset-registry get-started/data.xml -o data/data.xml
+           dvc add data/data.xml
+           # Pull data & run-cache from IBM COS and reproduce pipeline          
+                      
+           dvc pull --run-cache --local
            dvc repro
 
            # Report metrics
