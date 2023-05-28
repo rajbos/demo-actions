@@ -5,6 +5,8 @@ on:
     - .github/workflows/call-composite-action.yml
     - .github/my-composite-action/*.*
     
+  workflow_dispatch:
+    
 jobs:
   example:
     runs-on: ubuntu-latest
