@@ -2,7 +2,7 @@
 on:
   push:
     paths:
-    - .github/workflows/call-composite-action.yml
+    - .github/workflows/call-composite-action-reusable-workflow.yml
     - .github/my-composite-action/*.*
     
   workflow_dispatch:
