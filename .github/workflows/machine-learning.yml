@@ -1,3 +1,6 @@
+# Description: trying to get the example working from here: https://mlops-guide.github.io/CICD/cml_testing/
+# so far: failures with the XML downloaded :-|
+
 name: model-training-evaluate
 on: 
   push:
