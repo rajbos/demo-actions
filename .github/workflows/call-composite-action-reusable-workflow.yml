@@ -20,6 +20,6 @@ jobs:
     name: Calling reusable workflow
     uses: ./.github/workflows/reusable-workflow.yml
     with:      
-      config-path: ${{ runner.temp }}
+      config-path: .github/workflows
     secrets:
       token: ${{ github.token }}
