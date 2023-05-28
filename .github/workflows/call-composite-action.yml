@@ -1,0 +1,14 @@
+
+on:
+  push:
+    paths:
+    - .github/workflows/call-composite-action.yml
+    - .github/my-composite-action/*.*
+    
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Hello from example job"
+    - uses: actions/checkout@v3
+    - uses: .github/my-composite-action@main
