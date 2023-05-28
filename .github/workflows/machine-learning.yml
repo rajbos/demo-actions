@@ -10,6 +10,8 @@ jobs:
      container: docker://dvcorg/cml-py3:latest
      steps:
        - uses: actions/checkout@v3
+         with:
+           repository: mlops-guide/dvc-gitactions
        
        - name: 'Train and Evaluate model'
          shell: bash
