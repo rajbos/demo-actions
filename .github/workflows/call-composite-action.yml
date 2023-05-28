@@ -11,4 +11,4 @@ jobs:
     steps:
     - run: echo "Hello from example job"
     - uses: actions/checkout@v3
-    - uses: .github/my-composite-action@main
+    - uses: ./.github/my-composite-action@main
