@@ -46,10 +46,12 @@ jobs:
    cache-container:
      runs-on: ubuntu-latest
      steps:
-       - run: |
+       - continue-on-error: true
+         run: |
            echo "Permissions denied error :scream:"
            #cd /var/lib/docker/overlay2
            #ls -la
+           docker info
          # cache the dvcorg/cml-py3:latest container for faster downloading instead of pulling it every time
        - name: Cache Primes
          id: cache-primes
