@@ -1,7 +1,8 @@
 name: model-training-evaluate
 on: 
   push:
-     paths: .github/workflows/machine-learning.yml
+    paths: 
+      - .github/workflows/machine-learning.yml
   workflow_dispatch:
   
 jobs:
@@ -42,16 +43,16 @@ jobs:
            cml-publish ./results/precision_recall_curve.png --md >> report.md
            cml-send-comment report.md
 
-    cache-container:
-      runs-on: ubuntu-latest
-      steps:
-         - run: |
-             cd /var/lib/docker/overlay2
-             ls -la
+   cache-container:
+     runs-on: ubuntu-latest
+     steps:
+       - run: |
+           cd /var/lib/docker/overlay2
+           ls -la
          # cache the dvcorg/cml-py3:latest container for faster downloading instead of pulling it every time
-         - name: Cache Primes
-           id: cache-primes
-           uses: actions/cache@v3
-           with:
-             path: /var/lib/docker/overlay2
-             key: cml-py3
+       - name: Cache Primes
+         id: cache-primes
+         uses: actions/cache@v3
+         with:
+           path: /var/lib/docker/overlay2
+           key: cml-py3
