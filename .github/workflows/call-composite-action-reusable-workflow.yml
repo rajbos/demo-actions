@@ -19,3 +19,6 @@ jobs:
   reusable-workflow:
     name: Calling reusable workflow
     uses: ./.github/workflows/reusable-workflow.yml
+    with:      
+      config-path: ${{ github.workspace }}
+      token: ${{ github.token }}
