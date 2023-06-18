@@ -1,0 +1,9 @@
+author: Rob Bos
+description: Load GITHUB_TOKEN example
+name: Load GitHub Token
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "Here is the GITHUB_TOKEN: [$GITHUB_TOKEN]"
