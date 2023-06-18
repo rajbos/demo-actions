@@ -6,4 +6,4 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: echo "Here is the GITHUB_TOKEN: [$GITHUB_TOKEN]"
+      run: echo "Here is the GITHUB_TOKEN [$GITHUB_TOKEN]"
