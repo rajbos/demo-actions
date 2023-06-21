@@ -2,7 +2,8 @@ name: Run job in container
 on:
   push:
     paths:
-      .github/workflows/run-in-container
+      .github/workflows/run-in-container.yml
+  workflow_dispatch:
       
 jobs:
   build:
