@@ -1,0 +1,14 @@
+name: Run job in container
+on:
+  push:
+    paths:
+      .github/workflows/run-in-container
+      
+jobs:
+  build:
+    runs-on: self-hosted
+    container: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Hello World"
+      - run: whoami
