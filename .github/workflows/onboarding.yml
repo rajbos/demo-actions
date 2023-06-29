@@ -1,5 +1,6 @@
+name: Onboarding new team member
 on:
-  push:
+  workflow_dispatch:
   
 jobs:
   create-issues:
@@ -45,7 +46,6 @@ jobs:
                       return 0
                     }
                   }
-
 
                   console.log(`Triggered by ${context.actor}`)
 
