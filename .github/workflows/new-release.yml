@@ -5,7 +5,9 @@ on:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
       - 'Sprint-*'
-
+  
+  workflow_dispatch:
+  
 # Declare default GITHUB_TOKEN permissions as read only.
 permissions: read-all
  
