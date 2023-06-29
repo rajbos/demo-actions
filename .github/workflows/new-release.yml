@@ -83,7 +83,7 @@ jobs:
           git config user.name 'GitHub Actions'
           git config user.email 'GitHubActions@github.com'
           
-          git push --tags
+          git push --follow-tags
 
   publish:
     runs-on: ubuntu-latest
