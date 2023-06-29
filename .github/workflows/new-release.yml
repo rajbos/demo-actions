@@ -66,12 +66,20 @@ jobs:
             gh pr review --approve
             gh pr merge --rebase --delete-branch      
           done
+          
       - uses: SOLIDSoftworks/semver-tags@v1
         name: Generate new tag
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
           tag-prefix: 'v'
           default-version: '0.0.1'
+          
+      - name: Push new tag
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'GitHubActions@github.com'
+          
+          git push --tags
 
   publish:
     runs-on: ubuntu-latest
