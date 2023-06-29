@@ -76,6 +76,9 @@ jobs:
           
       - name: Push new tag
         run: |
+          git clone https://x:$GITHUB_TOKEN@github.com/rajbos/demo-actions.git
+          cd demo-actions
+          
           git config user.name 'GitHub Actions'
           git config user.email 'GitHubActions@github.com'
           
