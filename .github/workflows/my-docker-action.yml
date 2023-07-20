@@ -1,3 +1,4 @@
+name: Run local Docker action
 on: 
   push:
   workflow_dispatch:
@@ -7,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./my-docker-action
+      - uses: ./github/my-docker-action
 
