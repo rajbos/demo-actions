@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+    inputs:
+      abc:
+        description: test
+        type: string
+
+  push:
+        
+jobs:
+  job:
+    runs-on: k8s
+    steps:
+      - run: |
+          echo ${{ inputs.abc }}
