@@ -2,8 +2,6 @@
 title: "🎉 Your First Github steps!"
 ---
 
-![1](https://giphy.com/embed/du3J3cXyzhj75IOgvA)
-
-![2](https://giphy.com/gifs/devrock-code-edr-escueladevrock-du3J3cXyzhj75IOgvA)
+![Image of Octocat logo](https://media2.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif)
 
 Welcome to the team! Take your first steps on GitHub
