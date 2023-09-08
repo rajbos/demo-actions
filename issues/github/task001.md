@@ -1,7 +1,9 @@
 ---
-title: "Your First Github step!"
+title: "🎉 Your First Github steps!"
 ---
 
-/ insert gif here
+![1](https://giphy.com/embed/du3J3cXyzhj75IOgvA)
 
-Take your first step on GitHub
+![2](https://giphy.com/gifs/devrock-code-edr-escueladevrock-du3J3cXyzhj75IOgvA)
+
+Welcome to the team! Take your first steps on GitHub
