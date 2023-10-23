@@ -12,6 +12,7 @@ env:
 
   project-owner: 'rajbos'
   project-number: 5
+  ISSUE_URL: "${{ github.event.issue.html_url }}"
 
 permissions:
   issues: write
@@ -22,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'issues' && github.event.action == 'opened' && github.repository == 'rajbos/demo-actions'    
     steps:
+      - name: Instal gh projects extension
+        run: gh extension install github/gh-projects
     
       - name: Get Token
         id: get_workflow_token
@@ -33,7 +36,7 @@ jobs:
       - name: add-issue-to-project
         run: |
            echo "${{ toJSON(github.event.issue) }}"
-           gh projects item-add $project-number --user "@me" --url https://github.com/rajbos/demo-actions/issues/190
+           gh projects item-add $project-number --user "@me" --url "$ISSUE_URL"
 
       - name: Moved issue to ${{ env.todo }}
         uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
