@@ -10,7 +10,7 @@ env:
   assigned: Assigned
   done: Done
 
-  project-owner: 'rajbos'
+  PROJECTOWNER: 'rajbos'
   PROJECTNUMBER: 5
   ISSUE_URL: "${{ github.event.issue.html_url }}"
 
@@ -39,7 +39,8 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
         run: |
-           gh projects item-add "$PROJECTNUMBER" --user "rajbos" --url "$ISSUE_URL"
+           gh projects list --user "$PROJECTOWNER"
+           gh projects item-add "$PROJECTNUMBER" --user "$PROJECTOWNER" --url "$ISSUE_URL"
 
       - name: Moved issue to ${{ env.todo }}
         uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
