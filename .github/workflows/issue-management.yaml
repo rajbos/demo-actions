@@ -40,7 +40,7 @@ jobs:
           issue-id: ${{ github.event.issue.node_id }}
 
       - name: Moved issue to ${{ env.todo }}
-        uses: leonsteinhaeuser/project-beta-automations@d1c1261558118c0876fdb2b57a649303925e5a70
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
           user: ${{ env.project-owner }}
@@ -60,7 +60,7 @@ jobs:
           application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
       
       - name: Move issue to ${{ env.assigned }}
-        uses: leonsteinhaeuser/project-beta-automations@d1c1261558118c0876fdb2b57a649303925e5a70
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
           user: ${{ env.project-owner }}
@@ -80,7 +80,7 @@ jobs:
           application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
       
       - name: Move issue to ${{ env.done }}
-        uses: leonsteinhaeuser/project-beta-automations@d1c1261558118c0876fdb2b57a649303925e5a70
+        uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
         with:
           gh_token: ${{ steps.get_workflow_token.outputs.token }}
           user: ${{ env.project-owner }}
