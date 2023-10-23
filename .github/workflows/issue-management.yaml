@@ -13,10 +13,14 @@ env:
   project-owner: 'rajbos'
   project-number: 5
 
+permissions:
+  issues: write
+  repository-projects: write
+
 jobs:
   issue-created:
     runs-on: ubuntu-latest
-    if: github.event_name == 'issues' && github.event.action == 'opened' && github.repository == 'rajbos/demo-actions'
+    if: github.event_name == 'issues' && github.event.action == 'opened' && github.repository == 'rajbos/demo-actions'    
     steps:
     
       - name: Get Token
