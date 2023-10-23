@@ -34,6 +34,8 @@ jobs:
           application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
           
       - name: add-issue-to-project
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
            echo "${{ toJSON(github.event.issue) }}"
            gh projects item-add $project-number --user "@me" --url "$ISSUE_URL"
