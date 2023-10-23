@@ -11,7 +11,7 @@ env:
   done: Done
 
   project-owner: 'rajbos'
-  project-number: 5
+  PROJECTNUMBER: 5
   ISSUE_URL: "${{ github.event.issue.html_url }}"
 
 permissions:
@@ -40,7 +40,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
            echo "${{ toJSON(github.event.issue) }}"
-           gh projects item-add $project-number --user "@me" --url "$ISSUE_URL"
+           gh projects item-add "$PROJECTNUMBER" --user "@me" --url "$ISSUE_URL"
 
       - name: Moved issue to ${{ env.todo }}
         uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
