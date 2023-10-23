@@ -37,9 +37,8 @@ jobs:
           
       - name: add-issue-to-project
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
         run: |
-           echo "${{ toJSON(github.event.issue) }}"
            gh projects item-add "$PROJECTNUMBER" --user "@me" --url "$ISSUE_URL"
 
       - name: Moved issue to ${{ env.todo }}
