@@ -30,14 +30,10 @@ jobs:
           application_id: ${{ secrets.GH_APPLICATION_ID }}
           application_private_key: ${{ secrets.GH_APPLICATION_PRIVATE_KEY }}
           
-      - uses: monry/actions-add-issue-to-project@774e1a9754da6cc70b5b2648cec7d53dea93211d
-        id: add-issue-to-project
-        with:
-          # Personal Access Token that with `repo`, `org:read` and `org:write` are granted.
-          github-token: ${{ steps.get_workflow_token.outputs.token }}
-          project-owner: ${{ env.project-owner }}
-          project-number: ${{ env.project-number }}
-          issue-id: ${{ github.event.issue.node_id }}
+      - name: add-issue-to-project
+        run: |
+           echo "${{ toJSON(github.event.issue) }}"
+           gh projects item-add $project-number --user "@me" --url https://github.com/rajbos/demo-actions/issues/190
 
       - name: Moved issue to ${{ env.todo }}
         uses: leonsteinhaeuser/project-beta-automations@939000fb1900c9fc4f7b5058a09d9f833ebc6859
