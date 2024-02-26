@@ -8,11 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # run the vulnerable script:
-      - run: | 
+      - name: PR Title
+        run: | 
           echo "Title: ${{ github.event.pull_request.title }}"
 
-      - run: |
+      - name: Ref
+        run: |
           echo "GitHub Ref: ${{ github.ref }}"
+
+      - name: Head ref
+        run: |
+          echo "GitHub Ref: ${{ github.head_ref }}"
 
       - uses: actions/checkout@v4
       # run the vulnerable action:
