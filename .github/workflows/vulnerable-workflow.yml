@@ -1,6 +1,7 @@
 name: Vulnerable example workflow
 on:
   pull_request:
+  push:
 
 jobs:
   example:
