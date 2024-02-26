@@ -6,5 +6,10 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
+      # run the vulnerable script:
       - run: | 
           echo "Title: ${{ github.event.pull_request.title }}"
+
+      - uses: actions/checkout@v4
+      # run the vulnerable action:
+      - uses: ./.github/vulnerable-action
