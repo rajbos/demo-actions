@@ -1,0 +1,10 @@
+name: Vulnerable example workflow
+on:
+  pull_request:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          echo "Title: ${{ github.event.pull_request.title }}"
