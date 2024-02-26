@@ -1,0 +1,16 @@
+author: Rob Bos
+description: Load PR Title
+name: Load PR Title
+
+inputs:
+  title:
+    description: "Text to perform pattern match against"
+    required: true
+    default: "${{ github.event.pull_request.title }}"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        echo "Title: ${{ inputs.title }}"
