@@ -41,7 +41,17 @@ jobs:
       - name: Test with setting variable 2
         continue-on-error: true
         run: |
-           export TEST_GITHUB_REF=${GITHUB_REF:10}          
+           export TEST_GITHUB_REF=${GITHUB_REF:10}
+      
+      - name: Echo env variable
+        continue-on-error: true
+        run: |
+           echo GITHUB_REF
+
+      - name: Echo env variable 2
+        continue-on-error: true
+        run: |
+           echo ${GITHUB_REF:10}
 
       # test in a composite action file:
       - uses: actions/checkout@v4
