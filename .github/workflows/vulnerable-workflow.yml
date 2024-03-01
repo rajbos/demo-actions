@@ -64,4 +64,3 @@ jobs:
       # run the vulnerable action:
       - uses: ./.github/vulnerable-action
       
-
