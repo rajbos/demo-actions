@@ -13,6 +13,12 @@ jobs:
         run: | 
           echo "Title: ${{ github.event.pull_request.title }}"
 
+      - name: PR Title
+        continue-on-error: true
+        if: github.event == "pull_request"
+        run: | 
+          echo "Base Ref: ${{ github.event.pull_request.base.ref }}"
+
       - name: ref
         continue-on-error: true
         run: |
