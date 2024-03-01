@@ -5,11 +5,11 @@ on:
         description: test
         type: string
 
-  push:
+  #push:
         
 jobs:
   job:
-    runs-on: k8s
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo ${{ inputs.abc }}
