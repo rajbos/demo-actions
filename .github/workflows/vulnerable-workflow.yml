@@ -28,17 +28,17 @@ jobs:
         run: |
           echo "GitHub ref_name: ${{ github.ref_name }}"
           
-      - name: Test with setting variable
+      - name: setting variable from context
         continue-on-error: true
         run: |
            GITHUB_REF_NAME=${{ github.ref_name }}
 
-      - name: Test with setting variable
+      - name: setting variable from env
         continue-on-error: true
         run: |
            export TEST_GITHUB_REF=$GITHUB_REF
 
-      - name: Test with setting variable 2
+      - name: setting variable 2 from env
         continue-on-error: true
         run: |
            export TEST_GITHUB_REF=${GITHUB_REF:10}
@@ -46,7 +46,7 @@ jobs:
       - name: Echo env variable
         continue-on-error: true
         run: |
-           echo GITHUB_REF
+           echo $GITHUB_REF
 
       - name: Echo env variable 2
         continue-on-error: true
