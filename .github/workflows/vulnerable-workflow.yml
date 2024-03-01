@@ -12,35 +12,19 @@ jobs:
         run: | 
           echo "Title: ${{ github.event.pull_request.title }}"
 
-      - name: Ref
+      - name: ref
         run: |
           echo "GitHub Ref: ${{ github.ref }}"
 
-      - name: Head ref
+      - name: head_ref
         run: |
-          echo "GitHub Ref: ${{ github.head_ref }}"
+          echo "GitHub head_ref: ${{ github.head_ref }}"
 
+      - name: ref_name
+        run: |
+          echo "GitHub ref_name: ${{ github.ref_name }}"
+
+      # test in a composite action file:
       - uses: actions/checkout@v4
       # run the vulnerable action:
       - uses: ./.github/vulnerable-action
-  
-  test-melon:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
-      - uses: bluefireteam/melos-action@v3
-        with:
-          publish: true
-
-  test-melon-fork:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
-      - uses: rajbos/melos-action@main #bluefireteam/melos-action@v3
-        with:
-          publish: true
-
-
-          
