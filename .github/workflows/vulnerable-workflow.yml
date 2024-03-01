@@ -32,3 +32,15 @@ jobs:
       - uses: bluefireteam/melos-action@v3
         with:
           publish: true
+
+  test-melon-fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - uses: rajbos/melos-action@main #bluefireteam/melos-action@v3
+        with:
+          publish: true
+
+
+          
