@@ -31,3 +31,4 @@ jobs:
       - uses: actions/checkout@v4
       # run the vulnerable action:
       - uses: ./.github/vulnerable-action
+      
