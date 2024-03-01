@@ -1,6 +1,9 @@
 name: Run local Docker action
 on: 
   push:
+     paths:
+     - .github/my-docker-action
+     
   workflow_dispatch:
     
 jobs:
