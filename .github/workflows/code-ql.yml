@@ -11,9 +11,6 @@ on:
       - main
     paths:
       - .github/workflows/code-ql.yml
-    paths-ignore:
-      - README.md
-      - "*.*"
   
   pull_request:
     # The branches below must be a subset of the branches above
