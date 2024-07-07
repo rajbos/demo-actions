@@ -12,9 +12,7 @@ jobs:
     name: Java version
     strategy:
       matrix:
-        OS: [ubuntu-latest, windows-latest]
+        OS: [ubuntu-latest, windows-latest, windows-2022]
     runs-on: ${{ matrix.OS }}
     steps:
       - run: java -version
-
-      
