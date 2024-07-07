@@ -1,0 +1,20 @@
+name: Java version check
+
+on:
+  workflow_dispatch:
+
+  push:
+    paths:
+      - .github/workflows/java-version-test.yml
+
+jobs:
+  test-java-version:
+    name: Java version
+    strategy:
+      matrix:
+        OS: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.OS }}
+    steps:
+      - run: java --version
+
+      
