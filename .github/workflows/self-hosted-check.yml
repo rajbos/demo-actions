@@ -11,7 +11,7 @@ jobs:
   self-hosted-number:
     runs-on: ubuntu-latest
     steps:
-     - uses: devops-actions/load-runner-info@v1.0.6
+     - uses: devops-actions/load-runner-info@v1.0.9
        id: load-runner-info-org
        with: 
          accessToken: ${{ secrets.PAT }}
