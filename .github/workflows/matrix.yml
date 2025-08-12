@@ -8,11 +8,12 @@ on:
       
 jobs:
   job-1:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.label }}
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
+        label: [ubuntu-latest, ubuntu-22.04-arm64, ubuntu-24.04-arm64]
     steps:
      - run: |
          echo "Hello world"
-         echo "Node-version: ${{ matrix.node-version }}"
+         echo "Node-version: ${{ matrix.node-version }} for os ${{ matrix.label }}"
