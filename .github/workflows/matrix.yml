@@ -3,7 +3,7 @@ name: Demo the matrix
 on:
   push:
     paths: 
-      - .github/workflows/demo-matrix.yml
+      - .github/workflows/matrix.yml
   workflow_dispatch:
       
 jobs:
