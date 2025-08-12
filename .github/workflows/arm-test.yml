@@ -1,0 +1,14 @@
+name: ARM demo
+
+on:
+  push:
+    paths: 
+      - .github/workflows/arm-test.yml
+  workflow_dispatch:
+      
+jobs:
+  job-1:
+    runs-on: ubuntu-22.04-arm64
+    steps:
+     - run: |
+         echo "Hello world"
