@@ -10,7 +10,7 @@ jobs:
     permissions:
       issues: write
     steps: 
-      - uses: devops-actions/issue-comment-tag@v0.1.4
+      - uses: devops-actions/issue-comment-tag@v0.1.8
         name: Tag a user or team in an issue comment
         with: 
           issue: ${{ github.event.issue.number }}
