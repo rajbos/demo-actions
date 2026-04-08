@@ -23,3 +23,6 @@ jobs:
               -H "X-GitHub-Api-Version: 2022-11-28" \
               -H "Content-Type: application/json" \
               -d '{"model":"openai/gpt-4.1","messages":[{"role":"user","content":"What is the capital of France?"}]}')
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response body:"
+          cat test-response.json
