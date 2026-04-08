@@ -24,6 +24,8 @@ jobs:
               "https://models.github.ai/catalog/models" | jq '[.[] | .id]'
 
       - name: Call GitHub Models API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
           HTTP_CODE=$(curl -s -w "%{http_code}" -o test-response.json \
