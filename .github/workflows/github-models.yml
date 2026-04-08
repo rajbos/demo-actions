@@ -13,6 +13,16 @@ jobs:
     permissions: 
       models: read
     steps:
+      - name: List available models
+        shell: bash
+        run: |
+          echo "Available models:"
+          curl -s \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://models.github.ai/models" | jq '[.[] | .id]'
+
       - name: Call GitHub Models API
         shell: bash
         run: |
