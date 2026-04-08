@@ -30,7 +30,7 @@ jobs:
               -X POST "https://models.github.ai/inference/chat/completions" \
               -H "Accept: application/vnd.github+json" \
               -H "Authorization: Bearer $GITHUB_TOKEN" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
               -H "Content-Type: application/json" \
               -d '{"model":"openai/gpt-4.1","messages":[{"role":"user","content":"What is the capital of France?"}]}')
           echo "HTTP Status: $HTTP_CODE"
