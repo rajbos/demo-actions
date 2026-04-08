@@ -1,0 +1,24 @@
+name: Test GitHub Models API
+
+on:
+  workflow_dispatch:
+
+  push:
+    paths: .github/workflows/github-models.yml
+
+
+jobs:
+  call-models:
+    runs-on: ubuntu-slim
+    permissions: 
+      models: read
+    steps:
+      shell: pwsh
+      run: |
+        HTTP_CODE=$(curl -s -w "%{http_code}" -o test-response.json \
+            -X POST "https://models.github.ai/inference/chat/completions" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -H "Content-Type: application/json" \
+            -d '{"model":"openai/gpt-4.1","messages":[{"role":"user","content":"What is the capital of France?"}]}')
