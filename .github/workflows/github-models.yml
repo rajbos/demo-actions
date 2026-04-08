@@ -13,8 +13,9 @@ jobs:
     permissions: 
       models: read
     steps:
-      shell: pwsh
-      run: |
+      - name: Call GitHub Models API
+        shell: bash
+        run: |
         HTTP_CODE=$(curl -s -w "%{http_code}" -o test-response.json \
             -X POST "https://models.github.ai/inference/chat/completions" \
             -H "Accept: application/vnd.github+json" \
