@@ -10,7 +10,7 @@ jobs:
     steps:
     - run: echo "Hello GitHub Actions" >> example-file.txt
     
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v7
       with:
         name: my-artifact
         path: example-file.txt
