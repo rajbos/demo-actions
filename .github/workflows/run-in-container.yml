@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - run: echo "Hello World"
       - run: whoami
