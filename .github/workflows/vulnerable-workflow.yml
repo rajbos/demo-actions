@@ -54,7 +54,7 @@ jobs:
            echo ${GITHUB_REF:10}
 
       # test in a composite action file:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # run the vulnerable action:
       - uses: ./.github/vulnerable-action
       
