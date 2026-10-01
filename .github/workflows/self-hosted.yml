@@ -8,7 +8,7 @@ jobs:
   self-hosted-number1:
     runs-on: self-hosted
     steps:
-       - uses: actions/checkout@v2
+       - uses: actions/checkout@v7
        - run: echo "Hello world"
        
        - name: Checkout Git repo manually
@@ -30,7 +30,7 @@ jobs:
   docker-test:
     runs-on: self-hosted
     steps:
-       - uses: actions/checkout@v2
+       - uses: actions/checkout@v7
        - run: echo "Hello world"
        
        - name: Check docker setup manually
