@@ -1,0 +1,11 @@
+on:
+  push:
+    files: .github/workflows/debug.yml
+
+jobs:
+  job1:
+    runs-on: ubuntu-slim
+    steps:
+      - run: | 
+          echo "::debug::Set the Octocat variable"
+          echo "Logmessage bla"
