@@ -1,6 +1,6 @@
 on:
   push:
-    files: .github/workflows/debug.yml
+    paths: .github/workflows/debug.yml
 
 jobs:
   job1:
