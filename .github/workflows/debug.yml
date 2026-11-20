@@ -9,3 +9,7 @@ jobs:
       - run: | 
           echo "::debug::Set the Octocat variable"
           echo "Logmessage bla"
+          
+          echo "::warning::Set the Octocat variable"
+
+      - run:  echo "::error::Boom!"
